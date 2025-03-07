@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - The Dentist Multispeciality Hospital</title>
+    <!-- Calendly widget CSS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #38b000;
+            --primary-dark: #2d8a00;
+            --secondary: #70e000;
+            --light: #ebf7e3;
+            --dark: #1f6600;
+            --text: #333333;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .clinic-name {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .coming-soon {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            margin: 0 15px;
+            min-width: 80px;
+        }
+        
+        .countdown-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 10px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--text);
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, #38b000 0%, #1f6600 100%);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(255,255,255,0.2), transparent 70%);
+            pointer-events: none;
+        }
+        
+        .contact-heading {
+            color: var(--white);
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .contact-heading::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--white);
+            margin: 15px auto 0;
+            border-radius: 3px;
+        }
+        
+        .address, .phone {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .address p, .phone p {
+            margin-bottom: 8px;
+        }
+        
+        .phone a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 5px 0;
+        }
+        
+        .phone a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-label {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 20px 0;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .clinic-name {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .countdown-item {
+                margin: 10px;
+            }
+            
+            .countdown-value {
+                font-size: 2rem;
+            }
+            
+            .coming-soon, .contact-info {
+                padding: 30px;
+            }
+            
+            .contact-heading {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .clinic-name {
+                font-size: 1.8rem;
+            }
+            
+            .countdown-item {
+                min-width: 60px;
+                margin: 5px;
+            }
+            
+            .countdown-value {
+                font-size: 1.5rem;
+            }
+            
+            .contact-info {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="clinic-name">The Dentist Multispeciality Hospital</h1>
+            <p class="tagline">Excellence in Dental Care</p>
+        </header>
+        
+        <section class="coming-soon">
+            <h2>We're Opening Soon!</h2>
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span id="days" class="countdown-value">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours" class="countdown-value">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes" class="countdown-value">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds" class="countdown-value">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+            
+            <div class="message">
+                <p>We are excited to announce the upcoming launch of our state-of-the-art dental facility, designed with your comfort and care in mind.</p>
+                <p>Our new modern clinic will offer comprehensive dental services with cutting-edge technology and a team of specialized professionals dedicated to your oral health.</p>
+            </div>
+        </section>
+        
+        <section class="contact-info">
+            <h3 class="contact-heading">Visit Us Soon At</h3>
+            
+            <div class="address">
+                <span class="contact-label">Our Location</span>
+                <p><strong>The Dentist, Multispeciality Hospital</strong></p>
+                <p>1st Floor, Commercial Space</p>
+                <p>Shashikalp Classic Building</p>
+                <p>Opposite Garden City,</p>
+                <p>Samarvani, Silvassa</p>
+                <p>Dadra and Nagar Haveli, INDIA</p>
+            </div>
+            
+            <div class="phone">
+                <span class="contact-label">Contact Us</span>
+                <p><a href="tel:+919824144700">+91 9824144700</a></p>
+                <p><a href="tel:+918460456700">+91 8460456700</a></p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2025 The Dentist Multispeciality Hospital. All Rights Reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Set the countdown date (4 weeks from now)
+        const countdownDate = new Date();
+        countdownDate.setDate(countdownDate.getDate() + 28); // 4 weeks = 28 days
+        
+        // Update the countdown every second
+        const countdown = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            
+            // Calculate days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result
+            document.getElementById("days").textContent = formatTime(days);
+            document.getElementById("hours").textContent = formatTime(hours);
+            document.getElementById("minutes").textContent = formatTime(minutes);
+            document.getElementById("seconds").textContent = formatTime(seconds);
+            
+            // If the countdown is finished, display a message
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("days").textContent = "00";
+                document.getElementById("hours").textContent = "00";
+                document.getElementById("minutes").textContent = "00";
+                document.getElementById("seconds").textContent = "00";
+            }
+        }, 1000);
+        
+        // Format time to always show two digits
+        function formatTime(time) {
+            return time < 10 ? `0${time}` : time;
+        }
+    </script>
+    
+    <!-- Calendly widget JavaScript -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script type="text/javascript">
+        window.onload = function() { 
+            Calendly.initBadgeWidget({ 
+                url: 'https://calendly.com/contact-thedentistsilvassa/new-meeting?primary_color=38b000', 
+                text: 'Schedule Appointment', 
+                color: '#38b000', 
+                textColor: '#ffffff' 
+            }); 
+        }
+    </script>
+</body>
+</html>
