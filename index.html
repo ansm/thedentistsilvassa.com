@@ -45,6 +45,18 @@
             margin-bottom: 40px;
         }
         
+        .logo-container {
+            margin-bottom: 2px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 0;
+        }
+        
         .clinic-name {
             font-size: 2.5rem;
             color: var(--dark);
@@ -235,6 +247,10 @@
             .contact-heading {
                 font-size: 1.8rem;
             }
+            
+            .logo {
+                max-width: 150px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -259,12 +275,19 @@
                 padding: 15px;
                 font-size: 1rem;
             }
+            
+            .logo {
+                max-width: 120px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+            <div class="logo-container">
+                <img src="https://raw.githubusercontent.com/ansm/thedentistsilvassa.com/refs/heads/main/assets/images/logo.png" alt="The Dentist Multispeciality Hospital Logo" class="logo">
+            </div>
             <h1 class="clinic-name">The Dentist Multispeciality Hospital</h1>
             <p class="tagline">Excellence in Dental Care</p>
         </header>
@@ -302,16 +325,18 @@
             
             <div class="address">
                 <span class="contact-label">Our Location</span>
-                <p><strong>The Dentist Multispeciality Hospital</strong></p>
-                <p>1st Floor, Commercial Space, Shashikalp Classic Building</p>
-                <p>Opposite Garden City, Samarvani, Silvassa</p>
+                <p><strong>The Dentist, Multispeciality Hospital</strong></p>
+                <p>1st Floor, Commercial Space</p>
+                <p>Shashikalp Classic Building</p>
+                <p>Opposite Garden City,</p>
+                <p>Samarvani, Silvassa</p>
                 <p>Dadra and Nagar Haveli, INDIA</p>
             </div>
             
             <div class="phone">
                 <span class="contact-label">Contact Us</span>
                 <p><a href="tel:+919824144700">+91 9824144700</a></p>
-                <p><a href="tel:+919727644700">+91 9727644700</a></p>
+                <p><a href="tel:+918460456700">+91 8460456700</a></p>
             </div>
         </section>
         
@@ -372,3 +397,4 @@
     </script>
 </body>
 </html>
+
