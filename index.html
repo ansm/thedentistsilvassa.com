@@ -46,7 +46,7 @@
         }
         
         .logo-container {
-            margin-bottom: 2px;
+            margin-bottom: 5px;
             display: flex;
             justify-content: center;
         }
@@ -346,9 +346,8 @@
     </div>
     
     <script>
-        // Set the countdown date (4 weeks from now)
-        const countdownDate = new Date();
-        countdownDate.setDate(countdownDate.getDate() + 28); // 4 weeks = 28 days
+        // Set the countdown date to April 6, 2025
+        const countdownDate = new Date("April 6, 2025 00:00:00").getTime();
         
         // Update the countdown every second
         const countdown = setInterval(function() {
