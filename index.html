@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon - The Dentist Multispeciality Hospital</title>
+    <title>Coming Soon - The Dentist Multi-Speciality Dental Hospital</title>
     <!-- Calendly widget CSS -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #38b000;
-            --primary-dark: #2d8a00;
-            --secondary: #70e000;
-            --light: #ebf7e3;
-            --dark: #1f6600;
-            --text: #333333;
-            --white: #ffffff;
+            --primary: #02aced;
+            --primary-dark: #1b5e79;
+            --secondary: #120130;
+            --light: #e7e8ec;
+            --dark: #02aced;
+            --text: #000000;
+            --white: #e4e2e8;
+            --header-light: #02aced;
+            --header-dark: #1b5e79;
         }
         
         * {
@@ -28,6 +32,58 @@
             background-color: var(--light);
             color: var(--text);
             line-height: 1.6;
+            padding-top: 0; /* Adjusted for sticky header */
+        }
+        
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to bottom, var(--header-light) 0%, var(--header-dark) 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .header-logo {
+            max-width: 60px;
+            height: auto;
+            margin-right: 15px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        
+        .header-titles {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        
+        .header-clinic-name {
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-subtitle {
+            font-size: 1rem;
+            color: #ffffff;
+            font-weight: 400;
+            margin: 0;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
         
         .container {
@@ -43,26 +99,7 @@
         header {
             text-align: center;
             margin-bottom: 40px;
-        }
-        
-        .logo-container {
-            margin-bottom: 5px;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .logo {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 0;
-        }
-        
-        .clinic-name {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 10px;
-            font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
         }
         
         .tagline {
@@ -79,6 +116,59 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
             margin-bottom: 40px;
+        }
+        
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -100% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .coming-soon-title {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            animation: fadeIn 1.2s ease-out forwards;
+            position: relative;
+        }
+        
+        .coming-soon-title span {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary) 0%, #4db8ff 50%, var(--primary) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        .coming-soon-title i {
+            font-size: 2.4rem;
+            animation: float 3s ease-in-out infinite;
+            color: var(--primary);
         }
         
         .countdown {
@@ -133,7 +223,7 @@
         }
         
         .contact-info {
-            background: linear-gradient(135deg, #38b000 0%, #1f6600 100%);
+            background: linear-gradient(135deg, #02aced 0%, #1b5e79 100%);
             border-radius: 10px;
             padding: 40px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
@@ -219,12 +309,28 @@
         }
         
         @media (max-width: 768px) {
-            .clinic-name {
-                font-size: 2rem;
+            .header-logo {
+                max-width: 50px;
+            }
+            
+            .header-clinic-name {
+                font-size: 1.2rem;
+            }
+            
+            .header-subtitle {
+                font-size: 0.8rem;
             }
             
             .tagline {
                 font-size: 1.2rem;
+            }
+            
+            .coming-soon-title {
+                font-size: 2.2rem;
+            }
+            
+            .coming-soon-title i {
+                font-size: 1.8rem;
             }
             
             .countdown-item {
@@ -247,15 +353,33 @@
             .contact-heading {
                 font-size: 1.8rem;
             }
-            
-            .logo {
-                max-width: 150px;
-            }
         }
         
         @media (max-width: 480px) {
-            .clinic-name {
+            .header-container {
+                padding: 0 10px;
+            }
+            
+            .header-logo {
+                max-width: 40px;
+                margin-right: 10px;
+            }
+            
+            .header-clinic-name {
+                font-size: 1rem;
+            }
+            
+            .header-subtitle {
+                font-size: 0.7rem;
+            }
+            
+            .coming-soon-title {
                 font-size: 1.8rem;
+                gap: 10px;
+            }
+            
+            .coming-soon-title i {
+                font-size: 1.5rem;
             }
             
             .countdown-item {
@@ -275,25 +399,27 @@
                 padding: 15px;
                 font-size: 1rem;
             }
-            
-            .logo {
-                max-width: 120px;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo-container">
-                <img src="https://raw.githubusercontent.com/ansm/thedentistsilvassa.com/refs/heads/main/assets/images/logo.png" alt="The Dentist Multispeciality Hospital Logo" class="logo">
+    <!-- Sticky Header -->
+    <div class="sticky-header">
+        <div class="header-container">
+            <img src="assets/images/logo.png" alt="The Dentist Multi-Specialty Dental Hospital" class="header-logo">
+            <div class="header-titles">
+                <h1 class="header-clinic-name">THE DENTIST</h1>
+                <h2 class="header-subtitle">Multi-Speciality Dental Hospital</h2>
             </div>
-            <h1 class="clinic-name">The Dentist Multispeciality Hospital</h1>
-            <p class="tagline">Excellence in Dental Care</p>
-        </header>
-        
+        </div>
+    </div>
+
+    <div class="container">
         <section class="coming-soon">
-            <h2>We're Opening Soon!</h2>
+            <h2 class="coming-soon-title">
+                <i class="fas fa-tooth"></i>
+                <span>We're Opening Soon!</span>
+            </h2>
             
             <div class="countdown">
                 <div class="countdown-item">
@@ -381,19 +507,11 @@
             return time < 10 ? `0${time}` : time;
         }
     </script>
-    
-    <!-- Calendly widget JavaScript -->
+     <!-- Calendly badge widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <script type="text/javascript">
-        window.onload = function() { 
-            Calendly.initBadgeWidget({ 
-                url: 'https://calendly.com/contact-thedentistsilvassa/new-meeting?primary_color=38b000', 
-                text: 'Schedule Appointment', 
-                color: '#38b000', 
-                textColor: '#ffffff' 
-            }); 
-        }
-    </script>
+    <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/contact-thedentistsilvassa/new-meeting', text: 'Book Appointment', color: '#02aced', textColor: '#ffffff' }); }</script>
+    <!-- Calendly badge widget end -->
 </body>
 </html>
 
