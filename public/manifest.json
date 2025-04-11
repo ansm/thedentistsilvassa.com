@@ -1,0 +1,21 @@
+{
+  "name": "The Dentist - Multi-speciality Dental Hospital",
+  "short_name": "The Dentist",
+  "description": "Experience world-class dental care at The Dentist, Silvassa's premier ISO 9001:2015 certified multi-specialty dental hospital.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00AAE9",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
