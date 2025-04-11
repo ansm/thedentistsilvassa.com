@@ -42,7 +42,7 @@ export default function HomePage() {
   const keyServices = [
     { icon: "tooth", name: "General Dentistry", color: "#00AAE9" },
     { icon: "smile", name: "Cosmetic Dentistry", color: "#0097C1" },
-    { icon: "bone", name: "Dental Implants", color: "#007AB8" },
+    { icon: "bolt", name: "Dental Implants", color: "#007AB8" },
     { icon: "user-md", name: "Oral Surgery", color: "#006A9E" },
   ]
 
@@ -58,6 +58,8 @@ export default function HomePage() {
         return "fas fa-user-md"
       case "bone":
         return "fas fa-bone"
+      case "bolt":
+        return "fas fa-bolt"
       default:
         return "fas fa-tooth"
     }

@@ -18,7 +18,7 @@ const services = [
     id: 2,
     title: "Dental Implants",
     description: "Full mouth implant rehabilitation and fixed teeth in 72 hours with implants.",
-    icon: "bone",
+    icon: "bolt",
   },
   {
     id: 4,

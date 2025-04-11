@@ -54,6 +54,8 @@ export default function ServiceCard({ service }: ServiceCardProps) {
         return "fas fa-heartbeat"
       case "bone":
         return "fas fa-bone"
+      case "bolt":
+        return "fas fa-bolt"
       default:
         return "fas fa-tooth"
     }
