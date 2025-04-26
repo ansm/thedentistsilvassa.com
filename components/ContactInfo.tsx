@@ -39,13 +39,18 @@ export default function ContactInfo() {
           <div>
             <h4 className="text-lg font-semibold mb-1">Phone Number</h4>
             <p>
-              <a href="tel:+919824144700" className="hover:underline" itemProp="telephone">
-                +91 9824144700
+              <a href="tel:0260-2631900" className="hover:underline" itemProp="telephone">
+                0260-2631900
               </a>
             </p>
             <p>
-              <a href="tel:+919727644700" className="hover:underline" itemProp="telephone">
-                +91 9727644700
+              <a href="tel:9824144700" className="hover:underline" itemProp="telephone">
+                9824144700
+              </a>
+            </p>
+            <p>
+              <a href="tel:9727644700" className="hover:underline" itemProp="telephone">
+                9727644700
               </a>
             </p>
           </div>

@@ -157,29 +157,53 @@ export default function Header() {
               </a>
             </div>
 
-            <button
-              className="md:hidden flex flex-col cursor-pointer"
-              onClick={toggleMobileMenu}
-              aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-menu"
-              aria-label="Toggle mobile menu"
-            >
-              <span
-                className={`w-6 h-0.5 bg-white mb-1.5 transition-all duration-300 ${
-                  isMobileMenuOpen ? "transform rotate-45 translate-y-2" : ""
-                }`}
-              ></span>
-              <span
-                className={`w-6 h-0.5 bg-white mb-1.5 transition-all duration-300 ${
-                  isMobileMenuOpen ? "opacity-0" : ""
-                }`}
-              ></span>
-              <span
-                className={`w-6 h-0.5 bg-white transition-all duration-300 ${
-                  isMobileMenuOpen ? "transform -rotate-45 -translate-y-2" : ""
-                }`}
-              ></span>
-            </button>
+            {/* Mobile Phone Button - Expandable on hover */}
+            <div className="md:hidden flex items-center">
+              <div className="group relative mr-3">
+                {/* Unified expandable button */}
+                <div className="flex h-9 items-center">
+                  <a
+                    href="tel:+919824144700"
+                    className="flex items-center justify-center h-full rounded-full bg-primary overflow-hidden transition-all duration-300 ease-in-out"
+                  >
+                    {/* Phone number text */}
+                    <span className="whitespace-nowrap text-white font-medium text-sm opacity-0 max-w-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:max-w-[150px] group-hover:px-3">
+                      +91 9824144700
+                    </span>
+
+                    {/* Phone icon */}
+                    <span className="flex items-center justify-center w-9 h-9 rounded-full bg-primary text-white">
+                      <i className="fas fa-phone-alt text-sm group-hover:animate-pulse"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Mobile Menu Button */}
+              <button
+                className="flex flex-col cursor-pointer"
+                onClick={toggleMobileMenu}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
+                aria-label="Toggle mobile menu"
+              >
+                <span
+                  className={`w-6 h-0.5 bg-white mb-1.5 transition-all duration-300 ${
+                    isMobileMenuOpen ? "transform rotate-45 translate-y-2" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`w-6 h-0.5 bg-white mb-1.5 transition-all duration-300 ${
+                    isMobileMenuOpen ? "opacity-0" : ""
+                  }`}
+                ></span>
+                <span
+                  className={`w-6 h-0.5 bg-white transition-all duration-300 ${
+                    isMobileMenuOpen ? "transform -rotate-45 -translate-y-2" : ""
+                  }`}
+                ></span>
+              </button>
+            </div>
           </nav>
         </div>
       </header>
