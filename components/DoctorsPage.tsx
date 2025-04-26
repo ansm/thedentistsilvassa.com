@@ -5,34 +5,71 @@ const doctors = [
   {
     id: 1,
     name: "Dr. Ashish Mishra",
+    qualifications: ["MDS", "PGDMLS"],
     specialty: "Prosthodontist and Maxillofacial Implantologist",
     description:
       "Specializes in restoring and replacing teeth and facial structures using advanced prosthetics and dental implants.",
-    image: "/images/doctor-1.png",
+    image: "/images/ashish.jpg",
   },
   {
     id: 2,
     name: "Dr. Chavi Mishra ",
+    qualifications: ["BDS"],
     specialty: "Root canal specialist & Pediatric Dentist",
     description:
       "Expert in dental pulp issues with precision and providing comprehensive oral care for children and adolescents.",
-    image: "/images/doctor-2.png",
+    image: "/images/chavi.jpg",
   },
   {
     id: 3,
     name: "Dr. Mayur Katariya",
+    qualifications: ["BDS"],
     specialty: "Braces Specialist",
     description:
       "Specializes in diagnosing and correcting misaligned teeth and jaws using braces and other orthodontic treatments.",
-    image: "/images/doctor-3.png",
+    image: "/images/mayur.jpg",
   },
   {
     id: 4,
     name: "Dr. Hitesh Navapariya",
-    specialty: "Oral surgeon",
+    qualifications: ["MDS"],
+    specialty: "Oral and Maxillofacial Surgeon",
     description:
       "Specializes in performing surgical procedures on the mouth, jaws, and face, including tooth extractions, jaw corrections, and facial trauma treatment.",
-    image: "/images/doctor-4.png",
+    image: "/images/hitesh.jpg",
+  },
+  {
+    id: 5,
+    name: "Dr. Shaildendra Kumar",
+    qualifications: ["BDS"],
+    specialty: "Cosmetic Dentist",
+    description:
+      "Specializes in enhancing dental aesthetics through procedures like teeth whitening, veneers, bonding, and smile design.",
+    image: "/images/shaildendra.jpg",
+  },
+  {
+    id: 6,
+    name: "Dr. Vanraj solanki ",
+    qualifications: ["MDS"],
+    specialty: "Periodontology & Gum Diseases Specialist",
+    description: "Specializes in the prevention, diagnosis, and treatment of gum diseases and conditions affecting the supporting structures of the teeth.",
+    image: "/images/vanraj.jpg",
+  },
+  {
+    id: 7,
+    name: "Dr. Arun Tiwari ",
+    qualifications: ["BDS"],
+    specialty: "Conscious Sedation Speacialist",
+    description: "Specialist in performing a full range of dental procedures under conscious sedation, providing a comfortable experience for patients with needle anxiety.",
+    image: "/images/arun.jpg",
+  },
+  {
+    id: 8,
+    name: "Dr. Shruti Jaripatke ",
+    qualifications: ["BDS"],
+    specialty: "Associate General Dentist",
+    description: "Provides comprehensive dental care including diagnosis, treatment, and prevention of a wide range of oral health issues for patients of all ages.",
+    image: "/images/shruti.jpg",
   },
 ]
 

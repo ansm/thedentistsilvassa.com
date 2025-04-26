@@ -9,6 +9,7 @@ interface Doctor {
   specialty: string
   description: string
   image: string
+  qualifications?: string[] // Added qualifications field
 }
 
 interface DoctorCardProps {
@@ -64,6 +65,23 @@ export default function DoctorCard({ doctor }: DoctorCardProps) {
       <h3 className="text-xl font-semibold text-dark mb-1" itemProp="name">
         {doctor.name}
       </h3>
+
+      {/* Qualifications Section - Now positioned right below the name */}
+      {doctor.qualifications && doctor.qualifications.length > 0 && (
+        <div className="mb-3">
+          <div className="flex flex-wrap justify-center gap-1">
+            {doctor.qualifications.map((qualification, index) => (
+              <span
+                key={index}
+                className="text-xs bg-gray-100 text-gray-700 px-2 py-0.5 rounded-md font-medium"
+                itemProp="hasCredential"
+              >
+                {qualification}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
 
       <p
         className="inline-block px-4 py-1 bg-light text-primary font-medium rounded-full text-sm mb-4"
